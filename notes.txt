@@ -1,0 +1,19 @@
+
+
+https://developers.google.com/calendar/quickstart/python
+
+pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+
+
+
+#scope for simple book appointment, get text code to validate, reminder notice
+# and create google calendar link
+
+#using flask, mysql.
+
+#set available appointments
+#customer to select appointments
+#customer validates appointment with text
+#customer gets calendar booking link, email and text confirmation.
+#customer receives text reminder day before appointment, confirms Y or N
+#if customer fails to confirm, customer notified appointment will be cancelled.
