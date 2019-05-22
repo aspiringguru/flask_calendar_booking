@@ -12,7 +12,9 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 #using flask, mysql.
 
 #set available appointments
+name, start_time, end_time, duration, date
 #customer to select appointments
+name, phone, email, date, start_time, confirmed_email, confirmed_text, reminder1, reminder2
 #customer validates appointment with text
 #customer gets calendar booking link, email and text confirmation.
 #customer receives text reminder day before appointment, confirms Y or N
