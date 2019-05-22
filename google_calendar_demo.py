@@ -33,7 +33,7 @@ def main():
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
-
+            
     service = build('calendar', 'v3', credentials=creds)
 
     # Call the Calendar API
