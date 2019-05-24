@@ -10,6 +10,9 @@ conn = sqlite3.connect('database.db', detect_types=sqlite3.PARSE_DECLTYPES|sqlit
 print ("Opened database successfully")
 c = conn.cursor()
 c.execute('CREATE TABLE doctors(id integer primary key, name TEXT, start_time TIMESTAMP, end_time TIMESTAMP)')
+#c.execute('DROP TABLE booking')
+c.execute('CREATE TABLE booking(id integer primary key, doctorsid INTEGER, patientname TEXT, start_time TIMESTAMP, patientemail TEXT, patientMobile TEXT)')
+
 #name, start_time, end_time
 print ("Table created successfully")
 conn.commit()

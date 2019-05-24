@@ -1,0 +1,31 @@
+<html>
+   <body>
+       <p>msg : {{ msg }}</p>
+       <p>id : {{ id }}</p>
+       <p>year : {{ year }}</p>
+       <p>month : {{ month }}</p>
+       <p>day : {{ day }}</p>
+       <p>hour : {{ hour }}</p>
+
+       <form action = "{{ url_for('booktime') }}"  method = "POST">
+          <h3>Appointment details</h3>
+          doctors ID: {{ id }}<br>
+          Booking Date & Time : {{ year }} {{ month }} {{ day }} {{ hour }}<br>
+          <input name="id" type="hidden" value="{{ id }}">
+          <input name="year" type="hidden" value="{{ year }}">
+          <input name="month" type="hidden" value="{{ month }}">
+          <input name="day" type="hidden" value="{{ day }}">
+          <input name="hour" type="hidden" value="{{ hour }}">
+
+          Your Name :
+          <input type = "text" name = "patientname" /><br>
+          your Email:
+          <input type = "text" name = "patientemail" /><br>
+          Your Mobile :
+          <input type = "text" name = "patientMobile" /><br>
+
+          <input type = "submit" value = "submit" /><br>
+       </form>
+
+   </body>
+</html>

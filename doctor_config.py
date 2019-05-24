@@ -1,0 +1,2 @@
+STARTHOUR = '08'
+ENDHOUR = '17'

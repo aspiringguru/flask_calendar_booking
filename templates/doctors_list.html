@@ -30,18 +30,29 @@
                     console.log("hour:min:sec = "+starthour+":"+startmin+":"+startsec)
                     endtime = '{{ row[3] }}'
                     console.log("endtime:", endtime)
-                    var year = endtime.substring(0, 4)
-                    var month = endtime.substring(5, 7)
-                    var day = endtime.substring(8, 10)
-                    var hour = endtime.substring(11, 13)
-                    var min = endtime.substring(14, 16)
-                    var sec = endtime.substring(17, 19)
-                    console.log("year:month:day = "+year+":"+month+":"+day)
-                    console.log("hour:min:sec = "+hour+":"+min+":"+sec)
-                    for (hour = 09; hour < 16; hour++) {
-                        temp = "<a href='/booking?hour="+hour+"'>"+hour+"</a>"
+                    var endyear = endtime.substring(0, 4)
+                    var endmonth = endtime.substring(5, 7)
+                    var endday = endtime.substring(8, 10)
+                    var endhour = endtime.substring(11, 13)
+                    var endmin = endtime.substring(14, 16)
+                    var endsec = endtime.substring(17, 19)
+                    console.log("year:month:day = "+endyear+":"+endmonth+":"+endday)
+                    console.log("hour:min:sec = "+endhour+":"+endmin+":"+endsec)
+                    var end_time = parseInt({{end_time}}, 10)
+                    var start_time = parseInt({{start_time}}, 10)
+                    console.log("typeof end_time:", typeof end_time)
+                    console.log("typeof start_time:", typeof start_time)
+                    console.log("end_time:'"+{{end_time}}+"' "+end_time)
+                    console.log("start_time:'"+{{start_time}}+"' "+start_time)
+                    for (hour = start_time; hour < end_time; hour++) {
+                        if (hour>=starthour && hour<endhour){
+                            temp = "<a href='/booking?year="+startyear+"&month="+startmonth+"&day="+startday+"&hour="+hour+"&id="+{{row[0]}}+"'>"+hour+"</a>"
+                        } else {
+                            temp = hour
+                        }
                         document.getElementById("{{row[0]}}").innerHTML += " "+temp+" "
                     }
+
                </script>
             </tr>
          {% endfor %}
